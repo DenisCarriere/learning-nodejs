@@ -19,3 +19,27 @@ Libraries I'll be exploring
 | Turf        | GDAL      |
 | Tape        | pytest    |
 |             | Requests  |
+
+## Opening a File
+
+### Python
+#### Reading entire file
+```python
+with open('example.txt') as data:
+    print data.read()
+```
+
+### Reading multiple lines
+```
+with open('example.txt') as data:
+    for line in data.readlines():
+        print line.strip()
+```
+
+### NodeJS
+#### Reading entire file
+```nodejs
+var fs = require('fs');
+var data = fs.readFileSync('example.txt')
+console.log(data.toString())
+```
