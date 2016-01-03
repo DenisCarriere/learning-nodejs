@@ -4,10 +4,10 @@ Here are a collection of examples that show you how I currently program in Pytho
 
 Topics I'll be covering:
 
-- Opening a file
-- Reading a JSON
-- Reading YAML
-- Saving a JSON
+- Read & Write files
+- Read JSON
+- Read YAML
+- Save to JSON
 - Making a HTTP request
 
 Libraries I'll be exploring
@@ -20,26 +20,54 @@ Libraries I'll be exploring
 | Tape        | pytest    |
 |             | Requests  |
 
-## Opening a File
+## Read & Write files
 
 ### Python
-#### Reading entire file
+#### Read File
 ```python
-with open('example.txt') as data:
-    print data.read()
+with open('example.txt') as f:
+    print f.read()
 ```
 
-### Reading multiple lines
-```
-with open('example.txt') as data:
-    for line in data.readlines():
+#### Read Lines
+```python
+with open('example.txt') as f:
+    for line in f.readlines():
         print line.strip()
 ```
 
+#### Write File
+```python
+with open('output.txt', 'w') as f:
+    f.write('Foo Bar')
+```
+
+
 ### NodeJS
-#### Reading entire file
+#### Core Modules
 ```nodejs
-var fs = require('fs');
-var data = fs.readFileSync('example.txt')
+var fs = require('fs'),
+    rl = require('readline');
+```
+#### Read File
+```nodejs
+var data = fs.readFileSync('example.txt', 'utf-8')
 console.log(data.toString())
+```
+
+#### Read Lines
+```nodejs
+var rl = readline.createInterface({
+    input: fs.createReadStream('example.txt'),
+    output: process.stdout
+});
+
+rl.on('line', function(line) {
+    console.log(line);
+});
+```
+
+#### Write File
+```nodejs
+fs.writeFile("output.txt", "Foo Bar")
 ```
