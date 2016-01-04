@@ -10,6 +10,9 @@ Topics I'll be covering:
 - Save to JSON
 - Making a HTTP request
 
+Documentation:
+- https://github.com/lukehoban/es6features
+
 Libraries I'll be exploring
 
 | NodeJS      | Python    |
