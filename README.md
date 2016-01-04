@@ -44,15 +44,15 @@ with open('output.txt', 'w') as f:
 
 
 ### NodeJS
-#### Core Modules
+#### NPM Modules
 ```nodejs
 var fs = require('fs'),
-    rl = require('readline');
+    readline = require('readline');
 ```
 #### Read File
 ```nodejs
-var data = fs.readFileSync('example.txt', 'utf-8')
-console.log(data.toString())
+var data = fs.readFileSync('example.txt', 'utf-8').toString()
+console.log(data)
 ```
 
 #### Read Lines
@@ -70,4 +70,46 @@ rl.on('line', function(line) {
 #### Write File
 ```nodejs
 fs.writeFile("output.txt", "Foo Bar")
+```
+
+## Loops
+### Python
+#### For loop
+```python
+for i in xrange(10):
+    print "Hello: ", i
+```
+#### While Loop
+```python
+i = 0
+while (i < 10):
+    print 'Hello: ', i
+    i += 1
+```
+
+### NodeJS
+#### NPM Modules
+```
+var xrange = require('xrange')
+```
+#### For loop
+```nodejs
+for (var i = 0; i < 10; i++) {
+    console.log("Hello: ", i);
+}
+```
+#### For Loop - Using xrange
+
+```nodejs
+xrange(10).forEach(function(i) {
+    console.log('Hello:', i)
+});
+```
+#### While Loop
+```nodejs
+var i = 0
+while (i < 10) {
+    console.log("Hello: ", i);
+    i++;
+}
 ```
